@@ -1,1 +1,8 @@
-Text processing / RegExp / Objects and Classes tasks
+> # Final exam tasks
+>
+> * __String manipulation__ 
+>
+> * __RegExp__
+>
+> * __Object and Classes__
+
