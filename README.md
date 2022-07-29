@@ -1,1 +1,1 @@
-# javaScript-fundamentals-finalExams
+Text processing / RegExp / Objects and Classes tasks
