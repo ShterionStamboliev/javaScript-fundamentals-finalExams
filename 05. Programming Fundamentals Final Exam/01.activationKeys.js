@@ -10,11 +10,7 @@ function activationKeys(input) {
         switch(command) {
             case 'Contains':
                 let substr = rest;
-                if (activationKey.includes(substr)) {
-                    console.log(`${activationKey} contains ${substr}`);
-                } else {
-                    console.log('Substring not found!');
-                }
+                activationKey.includes(substr) ? console.log(`${activationKey} contains ${substr}`) : console.log('Substring not found!')
                 break;
 
                 case 'Flip':
