@@ -7,7 +7,7 @@ function heroesOfCodeAndLogicVII(input) {
     heroHp = Number(heroHp);
     heroMp = Number(heroMp);
     if (!obj[heroName]) {
-      obj[heroName] = { HP: heroHp, MP: heroMp };
+      obj[heroName] = { heroHp, heroMp };
     }
   }
   for (let i = numOfHeroes; i < input.length; i++) {
