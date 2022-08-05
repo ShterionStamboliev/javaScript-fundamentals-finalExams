@@ -17,27 +17,17 @@ function plantDiscovery(input) {
             command = command[1].split(' - ');
             let plantName = command[0];
             let plantRating = Number(command[1]);
-            if(obj[plantName]) {
-                obj[plantName].rating.push(plantRating);
-            } else {
-                console.log('error');
-            }
+            obj[plantName] ? obj[plantName].rating.push(plantRating) : console.log('error');
+
         } else if (command[0] === 'Update') {
             command = command[1].split(' - ');
             let plantName = command[0];
             let newPlantRarity = Number(command[1]);
-            if (obj[plantName]) {
-                obj[plantName].rarity = newPlantRarity;
-            } else {
-                console.log('error');
-            }
+            obj[plantName] ? obj[plantName].rarity = newPlantRarity : console.log('error');
+
         } else if (command[0] === 'Reset') {
             let plantName = command[1];
-            if (obj[plantName]) {
-                obj[plantName].rating = [];
-            } else {
-                console.log('error');
-            }
+            obj[plantName] ? obj[plantName].rating = [] : console.log('error');
         } 
     }
      console.log(`Plants for the exhibition:`);
