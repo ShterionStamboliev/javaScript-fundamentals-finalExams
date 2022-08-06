@@ -1,7 +1,7 @@
 function secretChat(input) {
   let concealedMessage = input.shift();
 
-  for (let message of input) {
+  for (const message of input) {
     let [command, ...rest] = message.split(":|:");
     if (command === "Reveal") {
       break;
@@ -9,15 +9,15 @@ function secretChat(input) {
 
     switch (command) {
       case "InsertSpace":
-        let index = Number(rest);
-        let conc = concealedMessage.substring(index);
+        const index = Number(rest);
+        const conc = concealedMessage.substring(index);
         concealedMessage = concealedMessage.substring(0, index) + " " + conc;
         console.log(concealedMessage);
         break;
 
       case "Reverse":
-        let substr = rest.toString();
-        let len = substr.length;
+        const substr = rest.toString();
+        const len = substr.length;
         if (concealedMessage.includes(substr)) {
             let subIndex = concealedMessage.indexOf(substr);
             let sliced = concealedMessage.substring(0, subIndex);
@@ -26,7 +26,7 @@ function secretChat(input) {
             concealedMessage = sliced + slicedAll + slicedSubstr;
           console.log(concealedMessage);
         } else {
-            console.log('error');
+          console.log('error');
         }
         break;
 
@@ -35,8 +35,8 @@ function secretChat(input) {
         let replacement = rest[1];
         if (concealedMessage.includes(newSubstr)) {
           concealedMessage = concealedMessage
-            .split(newSubstr)
-            .join(replacement);
+          .split(newSubstr)
+          .join(replacement);
           console.log(concealedMessage);
         }
     }
