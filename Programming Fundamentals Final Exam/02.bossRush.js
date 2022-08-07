@@ -1,15 +1,15 @@
 function boss(input) {
-  let inputCount = Number(input.shift());
-  let pattern =
+  const inputCount = Number(input.shift());
+  const pattern =
     /[|](?<bossName>[A-Z]{4,})[|][:][#](?<title>[A-z]+\s{1}[A-z]+)[#]/g;
 
   for (const hero of input) {
     let boss = hero.match(pattern);
     let match = pattern.exec(boss);
-    if (match === null) {
+    if (!match) {
       console.log("Access denied!");
     }
-    while (match !== null) {
+    while (match) {
       console.log(`${match.groups.bossName}, The ${match.groups.title}`);
       console.log(`>> Strength: ${match.groups.bossName.length}`);
       console.log(`>> Armor: ${match.groups.title.length}`);
