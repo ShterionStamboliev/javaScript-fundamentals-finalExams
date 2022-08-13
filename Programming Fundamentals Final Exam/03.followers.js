@@ -4,7 +4,7 @@ function followers(input) {
   input.forEach(el => {
      let [command, ...rest] = el.split(": ");
       if (command === "Log out") {
-      break;
+      return;
 });
     
     switch (command) {
@@ -27,7 +27,7 @@ function followers(input) {
         let blocked = rest[0];
         obj[blocked] ? delete obj[blocked] : console.log(`${blocked} doesn't exist.`);
     }
-  }
+  });
   console.log(`${Object.entries(obj).length} followers`);
   for (const info of Object.entries(obj)) {
     console.log(`${info[0]}: ${obj[info[0]].likes}`);
