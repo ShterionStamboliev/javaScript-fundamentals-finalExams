@@ -1,11 +1,12 @@
 function followers(input) {
   let obj = {};
 
-  for (const info of input) {
-    let [command, ...rest] = info.split(": ");
-    if (command === "Log out") {
+  input.forEach(el => {
+     let [command, ...rest] = el.split(": ");
+      if (command === "Log out") {
       break;
-    }
+});
+    
     switch (command) {
       case "New follower":
         !obj[rest[0]] ? obj[rest[0]] = { likes: 0 } : ''
