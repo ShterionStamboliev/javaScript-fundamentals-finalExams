@@ -1,10 +1,10 @@
 function decrypting(input) {
     let str = input.shift();
   
-    for (const info of input) {
-      let [command, ...rest] = info.split(" ");
+    input.forEach(el => {
+      let [command, ...rest] = el.split(" ");
       if (command === "Finish") {
-        break;
+        return;
       }
   
       switch (command) {
@@ -58,7 +58,7 @@ function decrypting(input) {
           }
           break;
       }
-    }
+    });
   }
 decrypting([
   "ILikeSoftUni",
